@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override func loadView() {
+        self.view = UIView.init(frame: UIScreen.main.bounds)
+        self.view.backgroundColor = UIColor.white
+    }
 }
 

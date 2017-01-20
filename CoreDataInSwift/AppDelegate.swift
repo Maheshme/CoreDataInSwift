@@ -13,10 +13,20 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var managedObjectContext: NSManagedObjectContext!
+    var managedObjectModel: NSManagedObjectModel!
+    var persistentStoreCoordinator: NSPersistentStoreCoordinator!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        _ = getManagedObjectContext()
+        
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        let vc: ViewController = ViewController.init()
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -72,6 +82,62 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+    
+    func getManagedObjectModel() ->NSManagedObjectModel{
+        if managedObjectModel != nil {
+            return managedObjectModel;
+        }
+        let modelUrl: URL = Bundle.main.url(forResource: "CoreDataInSwift", withExtension: "momd")!;
+        managedObjectModel = NSManagedObjectModel.init(contentsOf: modelUrl as URL)
+        return managedObjectModel
+    }
+    
+    func applicationDocumentsDirectory() -> URL {
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.sarvint.ios.SarvintApp" in the application's documents directory.
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+    }
+    
+    func getPersistantSToreCoordinator() ->NSPersistentStoreCoordinator{
+        
+        if persistentStoreCoordinator != nil {
+            return persistentStoreCoordinator;
+        }
+        
+        persistentStoreCoordinator = NSPersistentStoreCoordinator.init(managedObjectModel: getManagedObjectModel())
+        let storeUrl: URL = applicationDocumentsDirectory().appendingPathComponent("CoreDataInSwift.sqlite")
+        let failureReason = "There was an error creating or loading the application's saved data."
+        do{
+            try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: nil)
+        }catch{
+            var dict = [String: AnyObject]()
+            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject?
+            dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject?
+            
+            dict[NSUnderlyingErrorKey] = error as NSError
+            let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+            // Replace this with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+            abort()
+        }
+        return persistentStoreCoordinator
+    }
+    
+    func getManagedObjectContext() ->NSManagedObjectContext{
+        
+        if managedObjectContext != nil {
+            return managedObjectContext
+        }
+        
+        guard let coordinator: NSPersistentStoreCoordinator = getPersistantSToreCoordinator() as NSPersistentStoreCoordinator? else {
+            print("NSPersistentStoreCoordinator is empty")
+            return managedObjectContext
+        }
+        
+        managedObjectContext = NSManagedObjectContext.init(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = coordinator
+        return managedObjectContext
+    }
 
     // MARK: - Core Data Saving support
 
