@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Anime" representedClassName=".Anime" syncable="YES">
-        <attribute name="ended" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="episodes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="genre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="properties" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Properties" inverseName="anime" inverseEntity="Properties" syncable="YES"/>
+        <relationship name="state" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="anime" inverseEntity="State" syncable="YES"/>
+    </entity>
+    <entity name="Properties" representedClassName=".Properties" syncable="YES">
+        <attribute name="gener" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="anime" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Anime" inverseName="properties" inverseEntity="Anime" syncable="YES"/>
+    </entity>
+    <entity name="State" representedClassName=".State" syncable="YES">
+        <attribute name="hasEnglishDub" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hasEnglishSub" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isAiring" optional="YES" attributeType="Boolean" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="anime" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Anime" inverseName="state" inverseEntity="Anime" syncable="YES"/>
     </entity>
     <elements>
         <element name="Anime" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Properties" positionX="-54" positionY="9" width="128" height="90"/>
+        <element name="State" positionX="-36" positionY="27" width="128" height="105"/>
     </elements>
 </model>

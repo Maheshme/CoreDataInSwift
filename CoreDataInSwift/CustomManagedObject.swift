@@ -10,6 +10,13 @@ import Foundation
 import CoreData
 import UIKit
 
+enum coreDataError: Error {
+    case wrongData
+    case noData
+    case fetchFailed
+}
+
+
 public class CustomManagedObject: NSManagedObject{
     
     class func modelName() -> String{
@@ -62,7 +69,7 @@ public class CustomManagedObject: NSManagedObject{
         refreshContext(context:CustomManagedObject.context() , mergeChnages: mergeChanges)
     }
     
-    class func getDataUsingPredicate(pred: NSPredicate, modelName: String, context: NSManagedObjectContext) -> [Any]{
+    class func getDataUsingPredicate(pred: NSPredicate, modelName: String, context: NSManagedObjectContext)throws -> [Any]{
         
         let req: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest.init(entityName: modelName)
         req.entity = NSEntityDescription.entity(forEntityName: modelName, in: context)
@@ -72,7 +79,7 @@ public class CustomManagedObject: NSManagedObject{
         do{
             return try context.fetch(req)
         }catch{
-            return []
+            throw coreDataError.fetchFailed
         }
-}
+    }
 }

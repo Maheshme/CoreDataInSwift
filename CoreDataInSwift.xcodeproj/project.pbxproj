@@ -13,9 +13,14 @@
 		3D3082EF1E31E9600008171C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D3082EE1E31E9600008171C /* Assets.xcassets */; };
 		3D3082FD1E31E9610008171C /* CoreDataInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3082FC1E31E9610008171C /* CoreDataInSwiftTests.swift */; };
 		3D3083081E31E9610008171C /* CoreDataInSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3083071E31E9610008171C /* CoreDataInSwiftUITests.swift */; };
-		3D3083191E31EE420008171C /* Anime+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3083171E31EE420008171C /* Anime+CoreDataClass.swift */; };
-		3D30831A1E31EE420008171C /* Anime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3083181E31EE420008171C /* Anime+CoreDataProperties.swift */; };
 		3D30831D1E31EE770008171C /* CustomManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30831C1E31EE770008171C /* CustomManagedObject.swift */; };
+		3D3083681E36200F0008171C /* Anime+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3083621E36200F0008171C /* Anime+CoreDataClass.swift */; };
+		3D3083691E36200F0008171C /* Anime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3083631E36200F0008171C /* Anime+CoreDataProperties.swift */; };
+		3D3083701E36207A0008171C /* Properties+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30836C1E36207A0008171C /* Properties+CoreDataClass.swift */; };
+		3D3083711E36207A0008171C /* Properties+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30836D1E36207A0008171C /* Properties+CoreDataProperties.swift */; };
+		3D3083721E36207A0008171C /* State+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30836E1E36207A0008171C /* State+CoreDataClass.swift */; };
+		3D3083731E36207A0008171C /* State+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D30836F1E36207A0008171C /* State+CoreDataProperties.swift */; };
+		3DAF7A5B1E3A203E009D5844 /* InputTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAF7A5A1E3A203E009D5844 /* InputTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +53,14 @@
 		3D3083031E31E9610008171C /* CoreDataInSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataInSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D3083071E31E9610008171C /* CoreDataInSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataInSwiftUITests.swift; sourceTree = "<group>"; };
 		3D3083091E31E9610008171C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D3083171E31EE420008171C /* Anime+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Anime+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3D3083181E31EE420008171C /* Anime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Anime+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3D30831C1E31EE770008171C /* CustomManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomManagedObject.swift; sourceTree = "<group>"; };
+		3D3083621E36200F0008171C /* Anime+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Anime+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D3083631E36200F0008171C /* Anime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Anime+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3D30836C1E36207A0008171C /* Properties+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Properties+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D30836D1E36207A0008171C /* Properties+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Properties+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3D30836E1E36207A0008171C /* State+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3D30836F1E36207A0008171C /* State+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "State+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3DAF7A5A1E3A203E009D5844 /* InputTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +112,9 @@
 		3D3082E31E31E9600008171C /* CoreDataInSwift */ = {
 			isa = PBXGroup;
 			children = (
+				3DFF6ACE1E3A03C80023A09A /* Views */,
 				3D3083161E31EAB50008171C /* Data */,
 				3D3082E41E31E9600008171C /* AppDelegate.swift */,
-				3D3082E61E31E9600008171C /* ViewController.swift */,
 			);
 			path = CoreDataInSwift;
 			sourceTree = "<group>";
@@ -139,6 +149,8 @@
 		3D3083161E31EAB50008171C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3D30836B1E36202C0008171C /* State */,
+				3D30836A1E3620230008171C /* Properties */,
 				3D30831B1E31EE500008171C /* Anime */,
 				3D30831C1E31EE770008171C /* CustomManagedObject.swift */,
 				3D3082EB1E31E9600008171C /* CoreDataInSwift.xcdatamodeld */,
@@ -149,10 +161,37 @@
 		3D30831B1E31EE500008171C /* Anime */ = {
 			isa = PBXGroup;
 			children = (
-				3D3083171E31EE420008171C /* Anime+CoreDataClass.swift */,
-				3D3083181E31EE420008171C /* Anime+CoreDataProperties.swift */,
+				3D3083621E36200F0008171C /* Anime+CoreDataClass.swift */,
+				3D3083631E36200F0008171C /* Anime+CoreDataProperties.swift */,
 			);
 			name = Anime;
+			sourceTree = "<group>";
+		};
+		3D30836A1E3620230008171C /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				3D30836C1E36207A0008171C /* Properties+CoreDataClass.swift */,
+				3D30836D1E36207A0008171C /* Properties+CoreDataProperties.swift */,
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
+		3D30836B1E36202C0008171C /* State */ = {
+			isa = PBXGroup;
+			children = (
+				3D30836E1E36207A0008171C /* State+CoreDataClass.swift */,
+				3D30836F1E36207A0008171C /* State+CoreDataProperties.swift */,
+			);
+			name = State;
+			sourceTree = "<group>";
+		};
+		3DFF6ACE1E3A03C80023A09A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3D3082E61E31E9600008171C /* ViewController.swift */,
+				3DAF7A5A1E3A203E009D5844 /* InputTable.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,12 +329,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D30831A1E31EE420008171C /* Anime+CoreDataProperties.swift in Sources */,
+				3D3083701E36207A0008171C /* Properties+CoreDataClass.swift in Sources */,
+				3D3083731E36207A0008171C /* State+CoreDataProperties.swift in Sources */,
+				3D3083691E36200F0008171C /* Anime+CoreDataProperties.swift in Sources */,
+				3DAF7A5B1E3A203E009D5844 /* InputTable.swift in Sources */,
 				3D3082ED1E31E9600008171C /* CoreDataInSwift.xcdatamodeld in Sources */,
 				3D3082E71E31E9600008171C /* ViewController.swift in Sources */,
-				3D3083191E31EE420008171C /* Anime+CoreDataClass.swift in Sources */,
+				3D3083721E36207A0008171C /* State+CoreDataClass.swift in Sources */,
 				3D3082E51E31E9600008171C /* AppDelegate.swift in Sources */,
 				3D30831D1E31EE770008171C /* CustomManagedObject.swift in Sources */,
+				3D3083711E36207A0008171C /* Properties+CoreDataProperties.swift in Sources */,
+				3D3083681E36200F0008171C /* Anime+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +571,7 @@
 				3D30830E1E31E9610008171C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D30830F1E31E9610008171C /* Build configuration list for PBXNativeTarget "CoreDataInSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +580,7 @@
 				3D3083111E31E9610008171C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3D3083121E31E9610008171C /* Build configuration list for PBXNativeTarget "CoreDataInSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +589,7 @@
 				3D3083141E31E9610008171C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
